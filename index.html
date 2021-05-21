@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>NFT fingerprint probabilities</title>
+  </head>
+  <style>
+.container{
+    display:flex;
+width: max-content;
+margin:auto;
+margin-top: 64px;
+flex-direction: column;
+}
+
+.resultsCSS{
+
+  margin: auto;
+  width: max-content;
+  margin-top: 64px;
+}
+  </style>
+  <body>
+      <script src = "./getData.js"></script>
+ <div class="container"> <div>  Insert your desired String</div>
+<input class="inputString" onkeypress="handle(event)"  type="text"></input>
+<div class="buttons">
+    <input type="radio" id="getWhole" name="age" value="true"  onclick="calculation()">
+    <label for="getWhole">Look trough whole fingerprint</label><br>  
+    <input type="radio" id="getSequential" name="age" value="true" onclick="calculation()" checked>
+    <label for="getSequential">Look sequential chars</label><br><br>
+
+    <button onclick="calculation()" id="calculate">Calculate</button>
+</div>
+</div><div class="alert resultsCSS">b,i and o are never present in the fingerprint</div>
+<div class="probability resultsCSS"></div>
+<div class="resultsCSS results"></div>
+
+<script src = "./getProbability.js"></script>
+  </body>
+</html>
